@@ -1,5 +1,6 @@
 var reposController = {};
 
 reposController.index = function() {
-  repoView.index();
+  repos.requestRepos(repoView.index);
+  console.log('Request Repos');
 };
