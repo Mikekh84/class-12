@@ -2,5 +2,7 @@ page('/', articlesController.index);
 
 page('/about', reposController.index);
 
-page('/catergory/:catergory', articlesController.category);
+page('/category/:category', articlesController.category);
+
+
 page.start();
