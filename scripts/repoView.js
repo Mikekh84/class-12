@@ -5,16 +5,12 @@ repoView.index = function() {
 
   var _append = function(repo) {
     $('#about ul').append(repoView.render(repo));
-  };
-
-  repos.all.filter(
-    //TODO: How would you like to filter the repos?
-  )
-  .forEach(_append);
+      };
+    repos.all.forEach(_append);
 };
 
 repoView.render = function(repo) {
-  //TODO: How would you like to render this?
+  $('#about ul').append('<li><a href="' + repo.html_url +'">'  + repo.name + '</a></li>');
 };
 
 repoView.ui = function() {
