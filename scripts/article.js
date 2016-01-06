@@ -109,3 +109,15 @@ Article.findByCategory = function(category, callback) {
     callback
   );
 }
+
+Article.insertCategory =  function(category , callback) {
+  webDB.execute(
+    [
+      {
+        'sql': 'SELECT DISTINCT * FROM articles WHERE category = ?',
+        'data': [category]
+      }
+    ],
+    callback
+  )
+};
