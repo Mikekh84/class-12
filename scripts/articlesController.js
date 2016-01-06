@@ -9,5 +9,5 @@ articlesController.category = function(ctx, next) {
     ctx.articles = data;
     next();
   };
-  Article.findByCategory(ctx.params.category, articleView.renderCat);
+  Article.findByCategory(ctx.params.category, articleView.populateCat);
 };

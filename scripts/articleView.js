@@ -30,21 +30,17 @@ articleView.render = function(article) {
   return articleView.template(article);
 };
 
-articleView.renderCat = function (artice) {
-  var _renderAll = function() {
+articleView.renderCat = function (article) {
+  var _renderCat = function() {
     $articles = $('#articles');
     $articles.fadeIn().siblings().hide();
     article.forEach(function(article) {
       $articles.append(articleView.render(article));
+      return
     });
   };
-
-  if (articleView.template) {
-    _renderAll();
-  } else {
-    $.get('/templates/article.html', function(data, msg, xhr) {
-      articleView.template = Handlebars.compile(data);
-      _renderAll();
-    });
-  }
 };
+
+articleView.populateCat = function () {
+    $('#catFilter').append('<option> This worked</option>');
+  };
