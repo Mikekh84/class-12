@@ -29,3 +29,18 @@ articleView.render = function(article) {
 
   return articleView.template(article);
 };
+
+articleView.renderCat = function (article) {
+  var _renderCat = function() {
+    $articles = $('#articles');
+    $articles.fadeIn().siblings().hide();
+    article.forEach(function(article) {
+      $articles.append(articleView.render(article));
+      return
+    });
+  };
+};
+
+articleView.populateCat = function () {
+    $('#catFilter').append('<option> This worked</option>');
+  };

@@ -97,3 +97,15 @@ Article.truncateTable = function(callback) {
     callback
   );
 };
+
+Article.findByCategory = function(category, callback) {
+  webDB.execute(
+    [
+      {
+        'sql': 'SELECT DISTINCT * FROM articles WHERE category = ?',
+        'data': [category]
+      }
+    ],
+    callback
+  );
+}
